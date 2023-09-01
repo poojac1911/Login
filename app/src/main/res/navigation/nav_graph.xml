@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.welcome.Splash"
+        android:label="Splash"
+        tools:layout="@layout/splash">
+        <action
+            android:id="@+id/action_splash_to_splashloading"
+            app:destination="@id/splashloading" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashloading"
+        android:name="com.example.welcome.Splashloading"
+        android:label="Splashloading"
+        tools:layout="@layout/splash_loading">
+        <action
+            android:id="@+id/action_splashloading_to_onBoardingScreen"
+            app:destination="@id/onBoardingScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingScreen"
+        android:name="com.example.welcome.OnBoardingScreen"
+        android:label="OnBoardingScreen"
+        tools:layout="@layout/on_boarding_screen">
+        <action
+            android:id="@+id/action_onBoardingScreen_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.welcome.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_splash"
+            app:destination="@id/splash" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.welcome.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="com.example.welcome.VerificationFragment"
+        android:label="VerificationFragment"
+        tools:layout="@layout/fragment_verification">
+        <action
+            android:id="@+id/action_verificationFragment_to_verificationNewFragment"
+            app:destination="@id/verificationNewFragment" />
+        <action
+            android:id="@+id/action_verificationFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationNewFragment"
+        android:name="com.example.welcome.VerificationNewFragment"
+        android:label="VerificationNewFragment"
+        tools:layout="@layout/fragment_verification_new">
+        <action
+            android:id="@+id/action_verificationNewFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment" />
+        <action
+            android:id="@+id/action_verificationNewFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+
+
+</navigation>
